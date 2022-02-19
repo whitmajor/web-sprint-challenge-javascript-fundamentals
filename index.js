@@ -72,11 +72,10 @@ const zooAnimals = [
 function animalNames(){
   let displayNames = [];
   zooAnimals.forEach(function(item){
-     displayNames.push(item.animal_name),
-     displayNames.push(item.scientific_name)
-     return `name: ${displayNames.animal_name}, scientific: ${displayNames.scientific_name}`
-     
-    });
+     displayNames.push(`name: ${item.animal_name},` + " " + `scientific: ${item.scientific_name}`)
+  })
+    return displayNames
+
 }
 
 /*const ipAddresses = [];
