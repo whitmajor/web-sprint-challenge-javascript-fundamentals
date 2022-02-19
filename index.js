@@ -28,15 +28,15 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation() {
-  let counter =0
- return  function countfunc() {
-  counter = num + num 
-return counter++
-}
+function summation(N) {
+  let Counter = 0;
+    for(let i = 1; i <= N; i++){
+      Counter += i;
+    }
+    return Counter;
 }
 
- const newSum = summation(4)
+
 
  /*function counterMaker() {
   let count = 0;
@@ -69,9 +69,21 @@ const zooAnimals = [
   Use animalNames to populate and return the displayNames array with only the animal name and scientific name of each animal. 
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
+function animalNames(){
+  let displayNames = [];
+  zooAnimals.forEach(function(item){
+     displayNames.push(item.animal_name),
+     displayNames.push(item.scientific_name)
+     return `name: ${displayNames.animal_name}, scientific: ${displayNames.scientific_name}`
+     
+    });
+}
 
-  function animalNames(){}
-  
+/*const ipAddresses = [];
+people.forEach((item) => {
+  ipAddresses.push(item.ip_address);
+});
+/*
 zooAnimals.forEach(function(value,index,array){ console.log("value"+ value, "index" + index, "array" + array)})
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -128,7 +140,9 @@ zooAnimals.forEach(function(value,index,array){ console.log("value"+ value, "ind
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(){}   
+  function consume(a ,b ,cb){
+    return cb (a,b)
+  }   
   
 
  
@@ -193,8 +207,11 @@ CuboidMaker.prototype.surfaceArea =function(){
   return 2*(this.length * this.width + this.length * this.height + this.width * this.height)
 }
 
-
-
+const myArray = [2, 3, 4, 5, 35];
+const myOtherArray = myArray.map(function(item) {
+    return item * 2
+  })
+  console.log(myOtherArray)
 
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
@@ -212,50 +229,15 @@ const cuboid  = new CuboidMakerTwo({
    width : 5,
    height : 5,
 });
-/*
-//initalizing with an obje
-function Parent(param){
-  // assign attributes here
-  this.param1 = param.param1;
-  this.param2 = param.param2;
-  this.param3 = param.param3;
-  }
-  Parent.prototpye.methodName = function(){
-  // return something here
-  }
-  function Child(param){
-  Parent.call(this, param)// binding this to parent attributes
-  // any special attributes of child go here
-  }
-  Child.prototype = Object.create(Parent.prototype);
-  
-  //creating your obejct (invoking the contructor function)
-  const objectName = new Parent({
-  param1: 'arg1',
-  param2: 'arg2',
-  param3: 'arg3'
-  });
-/*function Baby(name,age, favoriteToy) {
-  Person.call(this,name,age)
-  this.favoriteToy = favoriteToy
-   
-  }
-  Baby.prototype = Object.create(Person.prototype)
-  Baby.prototype.play = function(){
-    return `${this.name} with ${this.favoriteToy}`
-  }
-/*
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(cuboid.volume()); // 100
-// console.log(cuboid.surfaceArea()); // 130
+//console.log(cuboid.volume()); // 100
+//console.log(cuboid.surfaceArea()); // 130
  
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
-class CuboidMakerTwo{
-
-}
+//class CuboidMakerTwo(){}
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
